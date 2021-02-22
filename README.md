@@ -10,7 +10,7 @@ The example outputs each tone as a sine wave. It tries to match the specified fr
 It uses a simple calibration function that determines how long it takes to transmit a sample to the DAC via I2C. This information is later used to determine how many samples per period can be outputted while still matching the frequency. The number of samples per sine wave period will scale automatically with the specified frequency. For a 1 Hz signal the sine wave will be outputted at a higher accuracy than for a higher frequency signal. The number of samples per sine wave period will always be a multiple of four to ensure that the most characteristic points of the sine wave (maximum, minimum and the two zero crossings) are always outputted correctly.
 The samples are precalculated and stored in a buffer before they are outputted as the Arduino is not fast enough for calculating the values on-the-fly.
 
-** Note **
+**Note**  
 If you need more exact timings could just calculate the amount of possible samples per period with a bit of safe margin and then use a timer interrupt or the micros() function instead of delayMicroseconds() while outputing the precalculated samples.
 
 ## References
